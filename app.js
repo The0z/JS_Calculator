@@ -134,7 +134,7 @@ function updateCalculator(e){
     }  
 }
 
-function clearAll(){
+function clear(){
     calcMem.op = '';
     calcMem.numbers = ['0', '0']
     calcMem.currIndex = 0;
