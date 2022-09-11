@@ -115,11 +115,11 @@ function updateCalculator(e){
             calcMem.op = 'subtract';
             calcMem.currIndex = 1;
             break;
-        case 'divBtn':
+        case 'multBtn':
             calcMem.op = 'multiply';
             calcMem.currIndex = 1;
             break;
-        case 'multBtn':
+        case 'divBtn':
             calcMem.op = 'divide';
             calcMem.currIndex = 1;
             break;
@@ -128,6 +128,7 @@ function updateCalculator(e){
             break;
         case 'opBtn':
             calcMem.prevSum =  operate(calcMem.op, calcMem.numbers[0], calcMem.numbers[1]);
+            clear();
             break;
         default:
             break;
