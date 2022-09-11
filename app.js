@@ -1,3 +1,14 @@
+//Object to keep track of data
+let calcMem = {
+    numbers: ["", ""],
+    currIndex: 0,  
+    op: '',
+    prevSum: 0,
+}
+
+
+
+
 //Start with the Simple Functions
 
 /**  
@@ -51,4 +62,47 @@ function operator(oper, a, b){
             return 'Error';
     }
         
+}
+
+// EVENT LISTENERS
+const buttons = document.querySelectorAll('button');
+buttons.forEach(button => button.addEventListener('click', (e) => updateCalculator(e)));
+
+// EVENT LISTENER FUNCTIONS
+// This will concatenate the value of the button onto either numbers[0] or numbers[1]
+function updateCalculator(e){
+    switch(e.target.id) {
+        case 'btn1':
+            calcMem.numbers[calcMem.currIndex] += '1';
+            break;
+        case 'btn2':
+            calcMem.numbers[calcMem.currIndex] += '2';
+            break;
+        case 'btn3':
+            calcMem.numbers[calcMem.currIndex] += '3';
+            break;
+        case 'btn4':
+            calcMem.numbers[calcMem.currIndex] += '4';
+            break;
+        case 'btn5':
+            calcMem.numbers[calcMem.currIndex] += '5';
+            break;
+        case 'btn6':
+            calcMem.numbers[calcMem.currIndex] += '6';
+            break;
+        case 'btn7':
+            calcMem.numbers[calcMem.currIndex] += '7';
+            break;
+        case 'btn8':
+            calcMem.numbers[calcMem.currIndex] += '8';
+            break;
+        case 'btn9':
+            calcMem.numbers[calcMem.currIndex] += '9';
+            break;
+        case 'btn0':
+            calcMem.numbers[calcMem.currIndex] += '0';
+            break;
+        default:
+            break;
+    }  
 }
