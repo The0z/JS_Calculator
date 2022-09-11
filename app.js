@@ -1,6 +1,6 @@
 //Object to keep track of data
 let calcMem = {
-    numbers: ["", ""],
+    numbers: ["0", "0"],
     currIndex: 0,  
     op: '',
     prevSum: 0,
@@ -101,6 +101,22 @@ function updateCalculator(e){
             break;
         case 'btn0':
             calcMem.numbers[calcMem.currIndex] += '0';
+            break;
+        case 'addBtn':
+            calcMem.op = 'add';
+            calcMem.currIndex = 1;
+            break;
+        case 'subBtn':
+            calcMem.op = 'subtract';
+            calcMem.currIndex = 1;
+            break;
+        case 'divBtn':
+            calcMem.op = 'multiply';
+            calcMem.currIndex = 1;
+            break;
+        case 'multBtn':
+            calcMem.op = 'divide';
+            calcMem.currIndex = 1;
             break;
         default:
             break;
