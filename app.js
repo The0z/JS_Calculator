@@ -127,7 +127,9 @@ function updateCalculator(e){
             clear();
             break;
         case 'opBtn':
-            calcMem.prevSum =  operate(calcMem.op, calcMem.numbers[0], calcMem.numbers[1]);
+            let numA = parseFloat(calcMem.numbers[0]);
+            let numB = parseFloat(calcMem.numbers[1]);
+            calcMem.prevSum =  operate(calcMem.op, numA, numB);
             clear();
             break;
         default:
