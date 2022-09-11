@@ -9,8 +9,7 @@ let calcMem = {
 
 
 
-//Start with the Simple Functions
-
+// OPERATOR HELPER FUNCTIONS
 /**  
  * Adds two numbers together
  * Takes in two numbers a & b. 
@@ -47,10 +46,12 @@ function divide(a,b){
     return a / b;
 }
 
+
+// OPERATOR FUNCTIONS
 /**
  * Takes an operator and 2 numbers and calls
- * either add, subtract, multiply or divide.
- * returns the result of the calls above.
+ * Returns the result of either add, subtract, multiply or divide.
+ * Returns the first number if no operator is provided.
  */
 function operator(oper, a, b){
     switch (oper) {
@@ -63,7 +64,7 @@ function operator(oper, a, b){
         case 'divide':
             return divide(a,b);
         default:
-            return 'Error';
+            return calcMem.numbers[0];
     }
         
 }
@@ -122,7 +123,16 @@ function updateCalculator(e){
             calcMem.op = 'divide';
             calcMem.currIndex = 1;
             break;
+        case 'clearBtn':
+            clearAll();
+            break;
         default:
             break;
     }  
+}
+
+function clearAll(){
+    calcMem.op = '';
+    calcMem.numbers = ['0', '0']
+    calcMem.currIndex = 0;
 }
