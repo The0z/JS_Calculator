@@ -53,7 +53,7 @@ function divide(a,b){
  * Returns the result of either add, subtract, multiply or divide.
  * Returns the first number if no operator is provided.
  */
-function operator(oper, a, b){
+function operate(oper, a, b){
     switch (oper) {
         case 'add':
             return add(a,b);
@@ -125,6 +125,9 @@ function updateCalculator(e){
             break;
         case 'clearBtn':
             clearAll();
+            break;
+        case 'opBtn'
+            operate(calcMem.op, calcMem.numbers[0], calcMem.numbers[1]);
             break;
         default:
             break;
