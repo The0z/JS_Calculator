@@ -1,6 +1,6 @@
 //Object to keep track of data
 let calcMem = {
-    numbers: ["0", "0"],
+    numbers: ["0", "0"], //initial values to prevent errors
     currIndex: 0,  
     op: '',
     prevSum: 0,
@@ -38,8 +38,12 @@ function multiply(a,b){
 /**
  * Divides two numbers
  * Takes in a & b (nums) and result of  a / b
+ * Returns an error string if dividing by 0.
  */
 function divide(a,b){
+    if (b == 0){
+        return "NEVER DIVIDE BY ZERO!"
+    }
     return a / b;
 }
 
