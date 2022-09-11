@@ -124,7 +124,7 @@ function updateCalculator(e){
             calcMem.currIndex = 1;
             break;
         case 'clearBtn':
-            clearAll();
+            clear();
             break;
         case 'opBtn':
             calcMem.prevSum =  operate(calcMem.op, calcMem.numbers[0], calcMem.numbers[1]);
