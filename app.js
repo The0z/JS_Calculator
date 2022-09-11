@@ -126,8 +126,8 @@ function updateCalculator(e){
         case 'clearBtn':
             clearAll();
             break;
-        case 'opBtn'
-            calcMem.prevSum = operate(calcMem.op, calcMem.numbers[0], calcMem.numbers[1]);
+        case 'opBtn':
+            calcMem.prevSum =  operate(calcMem.op, calcMem.numbers[0], calcMem.numbers[1]);
             break;
         default:
             break;
