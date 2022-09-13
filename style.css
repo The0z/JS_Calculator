@@ -1,0 +1,58 @@
+button {
+    color: white;
+    font-size: 2em;
+    background-color: darkgray;   
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#calculator {
+    margin: 3vh 0;
+    padding: 2vh 2vw;
+    background-color: lightgreen;
+    border-radius: 10px;
+    border: solid black 5px;
+}
+
+#btnContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 10vw);
+    grid-template-rows: repeat(5, 10vh);
+    column-gap: 1vw;
+    row-gap: 1vh;
+}
+
+#numField {
+    font-size: 3em;
+    font-family: monospace, 'Courier New';
+    text-align: right;
+    max-width: 38.8vw;
+    width: 38.8vw;
+    background-color: lightgray;
+    margin: 0;
+    padding: 0 2vw;
+    margin-bottom: 1vw;
+    border: solid black 0.1vw;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    #btnContainer {
+        grid-template-columns: repeat(4, 20vw);
+    }
+
+    #numField {
+        max-width: 78.8vw;
+        width: 78.8vw;
+    }
+
+    body {
+        align-items: flex-start;
+    }
+  }
