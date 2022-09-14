@@ -130,11 +130,11 @@ function updateCalculator(e){
             let numA = parseFloat(calcMem.numbers[0]);
             let numB = parseFloat(calcMem.numbers[1]);
             calcMem.prevSum =  operate(calcMem.op, numA, numB);
-            clear();
             break;
         default:
             break;
-    }  
+    }
+
 }
 
 function clear(){
