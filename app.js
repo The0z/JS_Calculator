@@ -125,7 +125,7 @@ function updateCalculator(e){
             calcMem.currIndex = 1;
             break;
         case 'clearBtn':
-            clearNumField(true)   
+            clearNumField(true);   
             break;
         case 'opBtn':
             let numA = parseFloat(calcMem.numbers[0]);
@@ -155,20 +155,20 @@ function clearNumField(clearNums){
  * Displays the first, second, or resulting number from the
  * calculation.
 */
-function display(isOpBtnPressed = false){
-    const numField = document.querySelector('#numField');
+// function display(isOpBtnPressed = false){
+//     const numField = document.querySelector('#numField');
     
-    if (isOpBtnPressed){ //display the sum of the two numbers
-        numField.textContent = parseFloat(calcMem.prevSum);
-    } 
-    else if(calcMem.prevSum == '9') //display first num & operator
+//     if (isOpBtnPressed){ //display the sum of the two numbers
+//         numField.textContent = parseFloat(calcMem.prevSum);
+//     } 
+//     else if(calcMem.prevSum == '9'){} //display first num & operator
     
     
     
-    (calcMem.currIndex == 1 && calcMem.numbers[1] === '0') { //display first num & operator
-        numField.textContent = `${parseFloat(calcMem.numbers[0])} ${calcMem.op}`; 
-    } 
-    else { //display first num & operator & second num
-        numField.textContent = `${parseFloat(calcMem.numbers[0])} ${calcMem.op} ${parseFloat(calcMem.numbers[1])}`; 
-    }
-}
+//     (calcMem.currIndex == 1 && calcMem.numbers[1] === '0') { //display first num & operator
+//         numField.textContent = `${parseFloat(calcMem.numbers[0])} ${calcMem.op}`; 
+//     } 
+//     else { //display first num & operator & second num
+//         numField.textContent = `${parseFloat(calcMem.numbers[0])} ${calcMem.op} ${parseFloat(calcMem.numbers[1])}`; 
+//     }
+// }
