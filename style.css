@@ -35,13 +35,15 @@ body {
     font-size: 3em;
     font-family: monospace, 'Courier New';
     text-align: right;
-    height: 1.5em;
+    height: 1.75em;
     max-width: 38.8vw;
     width: 38.8vw;
     background-color: lightgray;
     padding: 0 2vw;
     margin-bottom: 1vw;
     border: solid black 0.1vw;
+    overflow: auto;
+    overflow-y: hidden;
 }
 
 
