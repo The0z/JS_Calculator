@@ -148,6 +148,7 @@ function clearUpdate(clearField){
     } else {
         calcMem.op = '';
         calcMem.numbers = [calcMem.prevSum, '0'];
+        calcMem.currIndex = 0;
     }
 
 }
