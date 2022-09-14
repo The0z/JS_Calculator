@@ -145,10 +145,11 @@ function clearNumField(clearNums){
         calcMem.numbers = ['0', '0'];
     } else {
         calcMem.numbers = [calcMem.prevSum, '0'];
+        calcMem.prevSum = '0';
     }
     calcMem.op = '';
     calcMem.currIndex = 0;
-    calcMem.prevSum = '0';
+    
 }
 
 /**
