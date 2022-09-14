@@ -1,6 +1,6 @@
 //Object to keep track of data
 let calcMem = {
-    numbers: ["0", "0"], //initial values to prevent errors
+    numbers: ['0', '0'], //initial values to prevent errors
     currIndex: 0,  
     op: '',
     prevSum: 0,
@@ -125,14 +125,14 @@ function updateCalculator(e){
             calcMem.currIndex = 1;
             break;
         case 'clearBtn':
-            clearUpdate(true)   
+            clearNumField(true)   
             break;
         case 'opBtn':
             let numA = parseFloat(calcMem.numbers[0]);
             let numB = parseFloat(calcMem.numbers[1]);
             calcMem.prevSum =  operate(calcMem.op, numA, numB);
             isOpBtnPressed = true;
-            clearUpdate(false);
+            clearNumField(false);
     }
     display(isOpBtnPressed);
 
@@ -140,17 +140,15 @@ function updateCalculator(e){
 
 //Clear or updates the numField
 //clear is true, update is false
-function clearUpdate(clearField){
-    if (clearField){
-        calcMem.op = '';
-        calcMem.numbers = ['0', '0']
-        calcMem.currIndex = 0;
+function clearNumField(clearNums){
+    if (clearNums){
+        calcMem.numbers = ['0', '0'];
     } else {
-        calcMem.op = '';
         calcMem.numbers = [calcMem.prevSum, '0'];
-        calcMem.currIndex = 0;
     }
-
+    calcMem.op = '';
+    calcMem.currIndex = 0;
+    calcMem.prevSum = '0';
 }
 
 /**
@@ -160,9 +158,17 @@ function clearUpdate(clearField){
 function display(isOpBtnPressed = false){
     const numField = document.querySelector('#numField');
     
-    if (isOpBtnPressed){
+    if (isOpBtnPressed){ //display the sum of the two numbers
         numField.textContent = parseFloat(calcMem.prevSum);
-    } else {
-        numField.textContent = parseFloat(calcMem.numbers[calcMem.currIndex]); 
+    } 
+    else if(calcMem.prevSum == '9') //display first num & operator
+    
+    
+    
+    (calcMem.currIndex == 1 && calcMem.numbers[1] === '0') { //display first num & operator
+        numField.textContent = `${parseFloat(calcMem.numbers[0])} ${calcMem.op}`; 
+    } 
+    else { //display first num & operator & second num
+        numField.textContent = `${parseFloat(calcMem.numbers[0])} ${calcMem.op} ${parseFloat(calcMem.numbers[1])}`; 
     }
 }
