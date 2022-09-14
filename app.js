@@ -5,7 +5,7 @@ let calcMem = {
     op: '',
     prevSum: 0,
 }
-
+display();
 
 
 
@@ -76,6 +76,7 @@ buttons.forEach(button => button.addEventListener('click', (e) => updateCalculat
 // EVENT LISTENER FUNCTIONS
 // This will concatenate the value of the button onto either numbers[0] or numbers[1]
 function updateCalculator(e){
+    let isOpBtnPressed = false;
     switch(e.target.id) {
         case 'btn1':
             calcMem.numbers[calcMem.currIndex] += '1';
@@ -130,12 +131,12 @@ function updateCalculator(e){
             let numA = parseFloat(calcMem.numbers[0]);
             let numB = parseFloat(calcMem.numbers[1]);
             calcMem.prevSum =  operate(calcMem.op, numA, numB);
-            display(true);
+            isOpBtnPressed = true;
             break;
         default:
             break;
     }
-    display();
+    display(isOpBtnPressed);
 
 }
 
