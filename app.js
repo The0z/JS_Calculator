@@ -143,9 +143,9 @@ function updateCalculator(e){
 function clearNumField(clearNums){
     if (clearNums){
         calcMem.numbers = ['0', '0'];
+        calcMem.prevSum = '0';
     } else {
         calcMem.numbers = [calcMem.prevSum, '0'];
-        calcMem.prevSum = '0';
     }
     calcMem.op = '';
     calcMem.currIndex = 0;
