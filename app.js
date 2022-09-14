@@ -125,25 +125,31 @@ function updateCalculator(e){
             calcMem.currIndex = 1;
             break;
         case 'clearBtn':
-            clear();
+            clearUpdate(true)   
             break;
         case 'opBtn':
             let numA = parseFloat(calcMem.numbers[0]);
             let numB = parseFloat(calcMem.numbers[1]);
             calcMem.prevSum =  operate(calcMem.op, numA, numB);
             isOpBtnPressed = true;
-            break;
-        default:
-            break;
+            clearUpdate(false);
     }
     display(isOpBtnPressed);
 
 }
 
-function clear(){
-    calcMem.op = '';
-    calcMem.numbers = ['0', '0']
-    calcMem.currIndex = 0;
+//Clear or updates the numField
+//clear is true, update is false
+function clearUpdate(clearField){
+    if (clearField){
+        calcMem.op = '';
+        calcMem.numbers = ['0', '0']
+        calcMem.currIndex = 0;
+    } else {
+        calcMem.op = '';
+        calcMem.numbers = [calcMem.prevSum, '0'];
+    }
+
 }
 
 /**
