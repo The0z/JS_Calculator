@@ -130,10 +130,12 @@ function updateCalculator(e){
             let numA = parseFloat(calcMem.numbers[0]);
             let numB = parseFloat(calcMem.numbers[1]);
             calcMem.prevSum =  operate(calcMem.op, numA, numB);
+            display(true);
             break;
         default:
             break;
     }
+    display();
 
 }
 
@@ -141,4 +143,18 @@ function clear(){
     calcMem.op = '';
     calcMem.numbers = ['0', '0']
     calcMem.currIndex = 0;
+}
+
+/**
+ * Displays the first, second, or resulting number from the
+ * calculation.
+*/
+function display(isOpBtnPressed = false){
+    const numField = document.querySelector('#numField');
+    
+    if (isOpBtnPressed){
+        numField.textContent = parseFloat(calcMem.prevSum);
+    } else {
+        numField.textContent = parseFloat(calcMem.numbers[calcMem.currIndex]); 
+    }
 }
