@@ -134,7 +134,7 @@ function updateCalculator(e){
             isOpBtnPressed = true;
             clearNumField(false);
         case 'dotBtn':
-            if(!hasDecimalDot(calcMem.numbers[calcMem.currIndex]){
+            if(!hasDecimalDot(calcMem.numbers[calcMem.currIndex])){
                 calcMem.numbers[calcMem.currIndex] += '.';
             }
             break;
