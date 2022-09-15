@@ -91,6 +91,11 @@ function updateCalculator(e){
         case 'btn0':
             //Take the number off the back of the id string. i.e. press btn1 -> 1
             calcMem.nums[calcMem.index] += e.target.id.slice(-1);
+            //If a decimal point exists and another number has been pressed 
+            //add more fractional digits to display
+            if(hasDecimalDot(calcMem.nums[calcMem.index])){
+                moreOrLessFractional(true);
+            }
             break;
         case 'addBtn':
             calcMem.op = '+';
@@ -131,14 +136,12 @@ function updateCalculator(e){
             break;
         case 'backspace':
             backspace();
+            //If a decimal point exists we are reducing the fractional
+            if(hasDecimalDot(calcMem.nums[calcMem.index])){
+                moreOrLessFractional(false);
+            }
         default:
             break;
-    }
-
-    //If a decimal point exists and another number has been pressed add more fractional digits 
-    //to display
-    if(hasDecimalDot(calcMem.nums[calcMem.index])){
-        moreOrLessFractional(true);
     }
     display(isOpBtnPressed);
 
@@ -204,13 +207,13 @@ function display(isOpBtnPressed = false){
 
     //Display Initial Number Only (Operator/Second Number Not Given)
     if(calcMem.index === 0){
-        numField.textContent = +parseFloat(calcMem.nums[0]).toFixed(calcMem.roundTo);
+        numField.textContent = parseFloat(calcMem.nums[0]).toFixed(calcMem.roundTo);
     }
     else if (calcMem.op !== '' && calcMem.nums[1] === '0'){ //Display Initial Number and Operator
-        numField.textContent = `${+parseFloat(calcMem.nums[0]).toFixed(calcMem.roundTo)} ${calcMem.op}`
+        numField.textContent = `${parseFloat(calcMem.nums[0]).toFixed(calcMem.roundTo)} ${calcMem.op}`
     }
     else { //Display First Num, Operator, and Second Num
-        numField.textContent = `${+parseFloat(calcMem.nums[0]).toFixed(calcMem.roundTo)}
-                             ${calcMem.op} ${+parseFloat(calcMem.nums[1]).toFixed(calcMem.roundTo)}`; 
+        numField.textContent = `${parseFloat(calcMem.nums[0]).toFixed(calcMem.roundTo)}
+                             ${calcMem.op} ${parseFloat(calcMem.nums[1]).toFixed(calcMem.roundTo)}`; 
     }
 }
