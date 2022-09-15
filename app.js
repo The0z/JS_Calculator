@@ -166,6 +166,17 @@ function moreOrLessFractional(moreFract){
 }
 
 
+function backspace(){
+    if(calcMem.nums[calcMem.index].length == 0){
+        calcMem.nums[calcMem.index] = '0' //Prevents empty strings
+    }else{
+        calcMem.nums[calcMem.index] = calcMem.nums[calcMem.index].slice(-1); //remove last element in string
+        if(calcMem.nums[calcMem.index].slice(-1) === '.'){
+            calcMem.nums[calcMem.index] = calcMem.nums[calcMem.index].slice(-1); //remove the decimal point  
+        }
+    }
+}
+
 /**
  * Returns true if string contains a decimal
  * @param {*} str : inputted str 
