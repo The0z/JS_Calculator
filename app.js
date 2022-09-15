@@ -193,6 +193,7 @@ function clearNumField(clearNums){
     if (clearNums){
         calcMem.nums = ['0', '0'];
         calcMem.sum = '0';
+        calcMem.roundTo = 2;
     } else {
         calcMem.nums = [calcMem.sum, '0'];
     }
