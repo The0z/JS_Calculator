@@ -122,7 +122,7 @@ function updateCalculator(e){
         case 'opBtn': //aka Equals button
             let numA = parseFloat(calcMem.nums[0]);
             let numB = parseFloat(calcMem.nums[1]);
-            calcMem.sum =  '0' + operate(calcMem.op, numA, numB); //leading 0 for backspace operability
+            calcMem.sum =  '0' + operate(calcMem.op, numA, numB).toFixed(calcMem.roundTo); //leading 0 for backspace operability
             isOpBtnPressed = true;
             clearNumField(false);
             break;
