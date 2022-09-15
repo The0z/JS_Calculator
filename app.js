@@ -131,9 +131,10 @@ function updateCalculator(e){
         case 'opBtn': //aka Equals button
             let numA = parseFloat(calcMem.nums[0]);
             let numB = parseFloat(calcMem.nums[1]);
-            calcMem.sum =  operate(calcMem.op, numA, numB).toString();
+            calcMem.sum =  '0' + operate(calcMem.op, numA, numB); //leading 0 for backspace operability
             isOpBtnPressed = true;
             clearNumField(false);
+            break;
         case 'dotBtn':
             if(!hasDecimalDot(calcMem.nums[calcMem.index])){
                 calcMem.nums[calcMem.index] += '.';
@@ -169,15 +170,15 @@ function moreOrLessFractional(moreFract){
 
 
 function backspace(){
-    if(calcMem.nums[calcMem.index].length == 0){
-        calcMem.nums[calcMem.index] = '0' //Prevents empty strings
-    }else{
-        calcMem.nums[calcMem.index] = calcMem.nums[calcMem.index].slice(-1); //remove last element in string
+    let len = calcMem.nums[calcMem.index].length
+    if(len >= 2){
+        calcMem.nums[calcMem.index] = calcMem.nums[calcMem.index].slice(0,len - 1); //remove last element in string
         if(calcMem.nums[calcMem.index].slice(-1) === '.'){
-            calcMem.nums[calcMem.index] = calcMem.nums[calcMem.index].slice(-1); //remove the decimal point  
+            calcMem.nums[calcMem.index] = calcMem.nums[calcMem.index].slice(0,len - 1); //remove the decimal point  
         }
     }
 }
+
 
 /**
  * Returns true if string contains a decimal
