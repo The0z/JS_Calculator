@@ -158,7 +158,7 @@ function updateCalculator(e){
  * @param {*} moreFract: True means increase fract 
  */
 function moreOrLessFractional(moreFract){
-    if (!moreFract && calcMem.roundTo > 0){
+    if (!moreFract && calcMem.roundTo > 0){ //roundTo can never be negative!
         calcMem.roundTo--;
     }  else {
         calcMem.roundTo++;
