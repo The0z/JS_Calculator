@@ -59,7 +59,7 @@ body {
 
 @media only screen and (max-width: 600px) {
     .fractionalBtns{
-        font-size: 0.75em;
+        font-size: 0.85em;
     }
     #btnContainer {
         grid-template-columns: repeat(4, 20vw);
