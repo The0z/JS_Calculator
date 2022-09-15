@@ -152,6 +152,17 @@ function updateCalculator(e){
 
 }
 
+/**
+ * Will increase number of fractional digits if true, 
+ * otherwise will decrease them.
+ * @param {*} moreFract: True means increase fract 
+ */
+function moreOrLessFractional(moreFract){
+    if(moreFract){
+        calcMem.roundTo++;
+    }
+    calcMem.roundTo--;
+}
 
 
 /**
