@@ -44,6 +44,9 @@ function divide(a,b){
     if (b == 0){
         return "NEVER DIVIDE BY ZERO!"
     }
+    if( a / b < 1){ //if fraction - display 2 digits by default
+        calcMem.roundTo = 2;
+    }
     return a / b;
 }
 
