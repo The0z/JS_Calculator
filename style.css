@@ -28,6 +28,10 @@ body {
     border: solid black 5px;
 }
 
+#backspace {
+    font-size: 1.5em;
+}
+
 #btnContainer {
     display: grid;
     grid-template-columns: repeat(4, 10vw);
