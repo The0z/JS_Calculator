@@ -140,10 +140,10 @@ function updateCalculator(e){
             }
             break;
         case 'moreFract':
-            //moreOrLessFractional(true);
+            moreOrLessFractional(true);
             break;
         case 'lessFract':
-            //moreOrLessFractional(true);
+            moreOrLessFractional(true);
             break;
         default:
             break;
@@ -200,7 +200,7 @@ function display(isOpBtnPressed = false){
     if(calcMem.index === 0){
         numField.textContent = +parseFloat(calcMem.nums[0]).toFixed(calcMem.roundTo);
     }
-    else if (calcMem.op !== '' && calcMem.nums[1] == 0){ //Display Initial Number and Operator
+    else if (calcMem.op !== '' && calcMem.nums[1] === '0'){ //Display Initial Number and Operator
         numField.textContent = `${+parseFloat(calcMem.nums[0]).toFixed(calcMem.roundTo)} ${calcMem.op}`
     }
     else { //Display First Num, Operator, and Second Num
