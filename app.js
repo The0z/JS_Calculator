@@ -4,7 +4,7 @@ let calcMem = {
     index: 0,  
     op: '',
     sum: '0',
-    roundTo: 1,
+    roundTo: 0,
 }
 display(); //Initial value of 0 display
 
