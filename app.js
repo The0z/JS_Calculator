@@ -4,7 +4,7 @@ let calcMem = {
     index: 0,  
     op: '',
     sum: '0',
-    roundTo: 4,
+    roundTo: 1,
 }
 display(); //Initial value of 0 display
 
@@ -160,7 +160,7 @@ function updateCalculator(e){
  * otherwise will decrease them.
  * @param {*} moreFract: True means increase fract 
  */
-function moreOrLessFractional(moreFract){
+function moreOrLessFractional(moreFract){    
     if (!moreFract && calcMem.roundTo > 0){ //roundTo can never be negative!
         calcMem.roundTo--;
     } 
@@ -214,7 +214,7 @@ function display(isOpBtnPressed = false){
 
     //Display Initial Number Only (Operator/Second Number Not Given)
     if(calcMem.index === 0){
-        numField.textContent = +parseFloat(calcMem.nums[0]).toFixed(calcMem.roundTo);
+        numField.textContent = parseFloat(calcMem.nums[0]).toFixed(calcMem.roundTo);
     }
     else if (calcMem.op !== '' && calcMem.nums[1] === '0'){ //Display Initial Number and Operator
         numField.textContent = `${+parseFloat(calcMem.nums[0]).toFixed(calcMem.roundTo)} ${calcMem.op}`
