@@ -163,7 +163,8 @@ function updateCalculator(e){
 function moreOrLessFractional(moreFract){
     if (!moreFract && calcMem.roundTo > 0){ //roundTo can never be negative!
         calcMem.roundTo--;
-    }  else {
+    } 
+    else if(moreFract) {
         calcMem.roundTo++;
     }
 }
