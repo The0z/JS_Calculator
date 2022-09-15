@@ -145,6 +145,8 @@ function updateCalculator(e){
         case 'lessFract':
             moreOrLessFractional(false);
             break;
+        case 'backspace':
+            backspace();
         default:
             break;
     }
