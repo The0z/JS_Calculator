@@ -159,14 +159,14 @@ function clearNumField(clearNums){
 function display(isOpBtnPressed = false){
     const numField = document.querySelector('#numField');
     
-    if (isOpBtnPressed){ //display the sum of the two numbers
-        numField.textContent = parseFloat(calcMem.prevSum);
-    } 
-    else if(calcMem.prevSum == '9'){ //display first num & operator
-        //display first num & operator
-        numField.textContent = `${parseFloat(calcMem.numbers[0])} ${calcMem.op}`; 
-    } 
-    else { //display first num & operator & second num
+    //Display Initial Number Only (Operator/Second Number Not Given)
+    if(calcMem.currIndex === 0){
+        numField.textContent = parseFloat(calcMem.numbers[0]);
+    }
+    else if (calcMem.op !== '' && calcMem.numbers[1] == 0){ //Display Initial Number and Operator
+        numField.textContent = `${parseFloat(calcMem.numbers[0])} ${calcMem.op}`
+    }
+    else { //Display First Num, Operator, and Second Num
         numField.textContent = `${parseFloat(calcMem.numbers[0])} ${calcMem.op} ${parseFloat(calcMem.numbers[1])}`; 
     }
 }
