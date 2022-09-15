@@ -170,7 +170,6 @@ function moreOrLessFractional(moreFract){
  * @param {*} str : inputted str 
  */
 function hasDecimalDot(str){
-    console.log(typeof str);
     return str.includes(".");
 }
 
