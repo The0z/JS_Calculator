@@ -80,34 +80,17 @@ function updateCalculator(e){
     let isOpBtnPressed = false;
     switch(e.target.id) {
         case 'btn1':
-            calcMem.nums[calcMem.index] += '1';
-            break;
         case 'btn2':
-            calcMem.nums[calcMem.index] += '2';
-            break;
         case 'btn3':
-            calcMem.nums[calcMem.index] += '3';
-            break;
         case 'btn4':
-            calcMem.nums[calcMem.index] += '4';
-            break;
         case 'btn5':
-            calcMem.nums[calcMem.index] += '5';
-            break;
         case 'btn6':
-            calcMem.nums[calcMem.index] += '6';
-            break;
         case 'btn7':
-            calcMem.nums[calcMem.index] += '7';
-            break;
         case 'btn8':
-            calcMem.nums[calcMem.index] += '8';
-            break;
         case 'btn9':
-            calcMem.nums[calcMem.index] += '9';
-            break;
         case 'btn0':
-            calcMem.nums[calcMem.index] += '0';
+            //Take the number off the back of the id string. i.e. press btn1 -> 1
+            calcMem.nums[calcMem.index] += e.target.id.slice(-1);
             break;
         case 'addBtn':
             calcMem.op = '+';
