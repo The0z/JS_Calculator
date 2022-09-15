@@ -55,13 +55,13 @@ function divide(a,b){
  */
 function operate(oper, a, b){
     switch (oper) {
-        case 'add':
+        case '+':
             return add(a,b);
-        case 'subtract':
+        case '-':
             return subtract(a,b);
-        case 'multiply':
+        case '*':
             return multiply(a,b);
-        case 'divide':
+        case '/':
             return divide(a,b);
         default:
             return calcMem.numbers[0];
@@ -109,19 +109,19 @@ function updateCalculator(e){
             calcMem.numbers[calcMem.currIndex] += '0';
             break;
         case 'addBtn':
-            calcMem.op = 'add';
+            calcMem.op = '+';
             calcMem.currIndex = 1;
             break;
         case 'subBtn':
-            calcMem.op = 'subtract';
+            calcMem.op = '-';
             calcMem.currIndex = 1;
             break;
         case 'multBtn':
-            calcMem.op = 'multiply';
+            calcMem.op = '*';
             calcMem.currIndex = 1;
             break;
         case 'divBtn':
-            calcMem.op = 'divide';
+            calcMem.op = '/';
             calcMem.currIndex = 1;
             break;
         case 'clearBtn':
