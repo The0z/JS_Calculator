@@ -13,7 +13,7 @@ body {
 }
 
 .numBtn {
-    background-color: rgba(5, 60, 10, 0.797);
+    background-color: #0a5d11;
 }
 
 .fractionalBtns{
@@ -23,9 +23,13 @@ body {
 #calculator {
     margin: 3vh 0;
     padding: 2vh 2vw;
-    background-color: lightgreen;
+    background-color: #90ee90;
     border-radius: 10px;
     border: solid black 5px;
+}
+
+#opBtn {
+    background-color: #ee90ee;
 }
 
 #backspace {
