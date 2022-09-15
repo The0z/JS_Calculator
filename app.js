@@ -143,7 +143,7 @@ function updateCalculator(e){
             moreOrLessFractional(true);
             break;
         case 'lessFract':
-            moreOrLessFractional(true);
+            moreOrLessFractional(false);
             break;
         default:
             break;
@@ -158,10 +158,11 @@ function updateCalculator(e){
  * @param {*} moreFract: True means increase fract 
  */
 function moreOrLessFractional(moreFract){
-    if(moreFract){
+    if (!moreFract && calcMem.roundTo > 0){
+        calcMem.roundTo--;
+    }  else {
         calcMem.roundTo++;
     }
-    calcMem.roundTo--;
 }
 
 
@@ -204,7 +205,7 @@ function display(isOpBtnPressed = false){
         numField.textContent = `${+parseFloat(calcMem.nums[0]).toFixed(calcMem.roundTo)} ${calcMem.op}`
     }
     else { //Display First Num, Operator, and Second Num
-        numField.textContent = `${+parseFloat(calcMem.nums[0]).toFixed(4)}
+        numField.textContent = `${+parseFloat(calcMem.nums[0]).toFixed(calcMem.roundTo)}
                              ${calcMem.op} ${+parseFloat(calcMem.nums[1]).toFixed(calcMem.roundTo)}`; 
     }
 }
