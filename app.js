@@ -224,10 +224,10 @@ function display(isOpBtnPressed = false){
         numField.textContent = +parseFloat(calcMem.nums[0]).toFixed(calcMem.roundTo);
     }
     else if (calcMem.op !== '' && calcMem.nums[1] === '0'){ //Display Initial Number and Operator
-        numField.textContent = `${parseFloat(calcMem.nums[0]).toFixed(calcMem.roundTo)} ${calcMem.op}`
+        numField.textContent = `${+parseFloat(calcMem.nums[0]).toFixed(calcMem.roundTo)} ${calcMem.op}`
     }
     else { //Display First Num, Operator, and Second Num
-        numField.textContent = `${parseFloat(calcMem.nums[0]).toFixed(calcMem.roundTo)}
-                             ${calcMem.op} ${parseFloat(calcMem.nums[1]).toFixed(calcMem.roundTo)}`; 
+        numField.textContent = `${+parseFloat(calcMem.nums[0]).toFixed(calcMem.roundTo)}
+                             ${calcMem.op} ${+parseFloat(calcMem.nums[1]).toFixed(calcMem.roundTo)}`; 
     }
 }
