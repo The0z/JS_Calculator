@@ -127,12 +127,17 @@ function updateCalculator(e){
         case 'clearBtn':
             clearNumField(true);   
             break;
-        case 'opBtn':
+        case 'opBtn': //aka Equals button
             let numA = parseFloat(calcMem.numbers[0]);
             let numB = parseFloat(calcMem.numbers[1]);
             calcMem.prevSum =  operate(calcMem.op, numA, numB);
             isOpBtnPressed = true;
             clearNumField(false);
+        case 'dotBtn':
+            if(!hasDecimalDot(calcMem.numbers[calcMem.currIndex]){
+                calcMem.numbers[calcMem.currIndex] += '.';
+            }
+            break;
         default:
             break;
     }
@@ -140,8 +145,18 @@ function updateCalculator(e){
 
 }
 
-//Clear or updates the numField
-//clear is true, update is false
+/**
+ * Returns true if string contains a decimal
+ * @param {*} str : inputted str 
+ */
+function hasDecimalDot(str){
+    return str.includes(".");
+}
+
+/**
+ * Cleans up CalcMem properties for future operations.
+ * @param {*} clearNums : Should prevSum and numbers be reset? 
+ */
 function clearNumField(clearNums){
     if (clearNums){
         calcMem.numbers = ['0', '0'];
