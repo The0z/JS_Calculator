@@ -16,6 +16,10 @@ body {
     background-color: rgba(5, 60, 10, 0.797);
 }
 
+.fractionalBtns{
+    font-size: 1em;
+}
+
 #calculator {
     margin: 3vh 0;
     padding: 2vh 2vw;
@@ -54,6 +58,9 @@ body {
 
 
 @media only screen and (max-width: 600px) {
+    .fractionalBtns{
+        font-size: 0.75em;
+    }
     #btnContainer {
         grid-template-columns: repeat(4, 20vw);
     }
