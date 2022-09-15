@@ -139,12 +139,20 @@ function updateCalculator(e){
                 calcMem.nums[calcMem.index] += '.';
             }
             break;
+        case 'moreFract':
+            //moreOrLessFractional(true);
+            break;
+        case 'lessFract':
+            //moreOrLessFractional(true);
+            break;
         default:
             break;
     }
     display(isOpBtnPressed);
 
 }
+
+
 
 /**
  * Returns true if string contains a decimal
