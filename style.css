@@ -20,6 +20,11 @@ body {
     font-size: 1em;
 }
 
+.fractionalBtns, #dotBtn{
+    color: black;
+    background-color: #90EEBF;
+}
+
 #calculator {
     margin: 3vh 0;
     padding: 2vh 2vw;
@@ -34,6 +39,10 @@ body {
 
 #backspace {
     font-size: 1.5em;
+}
+
+#backspace, #clearBtn, #addBtn, #subBtn, #multBtn, #divBtn {
+    background-color: #9090ee;
 }
 
 #btnContainer {
