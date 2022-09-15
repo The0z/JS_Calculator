@@ -5,7 +5,7 @@ let calcMem = {
     op: '',
     prevSum: 0,
 }
-display();
+display(); //Initial value of 0 display
 
 
 
@@ -133,6 +133,8 @@ function updateCalculator(e){
             calcMem.prevSum =  operate(calcMem.op, numA, numB);
             isOpBtnPressed = true;
             clearNumField(false);
+        default:
+            break;
     }
     display(isOpBtnPressed);
 
