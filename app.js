@@ -130,7 +130,7 @@ function updateCalculator(e){
         case 'opBtn': //aka Equals button
             let numA = parseFloat(calcMem.numbers[0]);
             let numB = parseFloat(calcMem.numbers[1]);
-            calcMem.prevSum =  operate(calcMem.op, numA, numB);
+            calcMem.prevSum =  operate(calcMem.op, numA, numB).toString();
             isOpBtnPressed = true;
             clearNumField(false);
         case 'dotBtn':
@@ -150,6 +150,7 @@ function updateCalculator(e){
  * @param {*} str : inputted str 
  */
 function hasDecimalDot(str){
+    console.log(typeof str);
     return str.includes(".");
 }
 
