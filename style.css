@@ -47,7 +47,7 @@ body {
 
 #btnContainer {
     display: grid;
-    grid-template-columns: repeat(4, 10vw);
+    grid-template-columns: repeat(4, 7.5vw);
     grid-template-rows: repeat(5, 10vh);
     margin-top: 2vh;
     column-gap: 1vw;
@@ -61,8 +61,8 @@ body {
     font-family: monospace, 'Courier New';
     text-align: right;
     height: 1.75em;
-    max-width: 38.8vw;
-    width: 38.8vw;
+    max-width: 28.8vw;
+    width: 28.8vw;
     background-color: lightgray;
     padding: 0 2vw;
     margin-bottom: 1vw;
